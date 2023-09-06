@@ -1,0 +1,11 @@
+{
+  "name": "js-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "task-2": "cd ./task-2 && node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
