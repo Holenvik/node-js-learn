@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "task-2": "cd ./task-2 && node index.js"
+    "task-2": "cd ./task-2 && node index.js",
+    "task-3": "cd ./task-3 && nodemon index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
 }
