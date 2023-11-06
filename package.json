@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "task-2": "cd ./task-2 && node index.js",
-    "task-3": "cd ./task-3 && nodemon index.js"
+    "task-3": "cd ./task-3 && nodemon index.js",
+    "task-5": "cd ./task-5 && nodemon index.mjs"
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +15,9 @@
   },
   "dependencies": {
     "csvtojson": "^2.0.10"
+  },
+  "nodemonConfig": {
+    "ext": "js,json,mjs",
+    "exec": "node --experimental-modules"
   }
 }
