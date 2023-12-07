@@ -1,0 +1,30 @@
+version: '3'
+services:
+  postgres-db:
+    image: "postgres:12"
+    container_name: "node-gmp-db"
+    environment:
+      - POSTGRES_USER=node_gmp
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=node_gmp
+    restart: always
+    ports:
+      - '5432:5432'
+
+  nest-app:
+    build:
+      context: ./
+      dockerfile: src/Dockerfile
+    container_name: "node-gmp-app"
+    depends_on:
+      - postgres-db
+    environment:
+      - NODE_ENV=production  # Set the Node.js environment to production
+      - POSTGRES_HOST=postgres-db  # Use the service name as the database host
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=node_gmp
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=node_gmp
+    ports:
+      - '3001:3001'  # Expose the Nest.js application port
+    restart: always
